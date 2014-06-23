@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello My name</title>
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+
+      Hello, <strong>{{firstName}} {{lastName}}</strong>!
+
+  </script>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
+  <script src="bower_components/ember/ember.js"></script>
+  <script type="text/javascript">
+  	window.App = Ember.Application.create();
+  	App.ApplicationController = Ember.Controller.extend({
+  		firstName: "Trek",
+  		lastName: "Glowacki"
+		});
+  </script>
+
+</body>
+</html>
