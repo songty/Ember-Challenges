@@ -28,8 +28,11 @@
     <h1>This is the About page!</h1>
   </script>
   <script type="text/x-handlebars" data-template-name="subscribe">
-      <h1>This is the Subscribe page!</h1>
-
+      <h1>This is the {{#link-to 'subscribe.new'}}Subscribe page{{/link-to}}!</h1>
+      {{outlet}}
+  </script>
+  <script type="text/x-handlebars" data-template-name="subscribe/new">
+      <h1>This is the New Subscribe page!</h1>
   </script>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -38,8 +41,10 @@
   <script type="text/javascript">
   	window.App = Ember.Application.create();
     App.Router.map(function () {
-      this.route("about");
-      this.route("subscribe");
+      this.resource("about");
+      this.resource("subscribe", function() {
+        this.route("new");
+      });
     });
   </script>
 
