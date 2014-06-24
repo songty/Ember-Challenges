@@ -4,21 +4,34 @@
 	<title>Hello My name</title>
 </head>
 <body>
+<div>
 
-  <script type="text/x-handlebars">
+</div>
+  <script type="text/x-handlebars" data-template-name="application">
       <nav>
       {{#link-to 'index'}}Home{{/link-to}}
       {{#link-to 'about'}}About{{/link-to}}
       {{#link-to 'subscribe'}}Subscribe{{/link-to}}
       </nav>
+    {{outlet}}
     <form>
       {{input type="text" value=name placeholder="Your Name"}}
-
-
     </form>
       Hello, {{name}}!
 
+
   </script>
+  <script type="text/x-handlebars" data-template-name="index">
+    <h1>This is the About page!</h1>
+  </script>
+  <script type="text/x-handlebars" data-template-name="about">
+    <h1>This is the About page!</h1>
+  </script>
+  <script type="text/x-handlebars" data-template-name="subscribe">
+      <h1>This is the Subscribe page!</h1>
+
+  </script>
+
   
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/handlebars/handlebars.js"></script>
